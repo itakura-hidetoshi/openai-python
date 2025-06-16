@@ -738,3 +738,8 @@ Python 3.8 or higher.
 ## Contributing
 
 See [the contributing documentation](./CONTRIBUTING.md).
+
+## 空OS（Kū OS）構想について
+
+空OSは「空」の哲学とAIテンソル技術を融合した、分断なき知のための新しいOS型フレームワークです。
+（※詳細は `README_kuos.md` も参照）
