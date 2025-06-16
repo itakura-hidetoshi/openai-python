@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+  title: Kū OS API
+  version: "0.1.0"
+paths:
+  /tensor/map:
+    post:
+      summary: Map text to tensor structure
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                mode:
+                  type: string
+                output_format:
+                  type: string
+                  default: text
+                lang:
+                  type: string
+                  default: ja
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mapped_tensor:
+                    type: string
