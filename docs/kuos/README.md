@@ -99,6 +99,7 @@ English
 - × … 非対応・未実装
 
 English
+
 The Innovation and Uniqueness of Kū OS
 	•	Unified analysis across religion, philosophy, science, medicine, and ethics using multilayer tensor architecture
 	•	International standard API (OpenAPI 3.1) / Full Explainable AI compatibility
