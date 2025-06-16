@@ -76,6 +76,26 @@ English
 	•	The goal: a society, science, medicine, education, and ethics free from artificial divisions.
 
 ⸻
+## 空OS（Kū OS）の革新性と独自性 / The Innovation of Kū OS
+
+- 多層テンソルで宗教・哲学・科学・医療・倫理を一元解析
+- 国際標準API（OpenAPI 3.1）/ Explainable AI完全対応
+- 分断・対立・文化バイアスを越え、人類智を動的統合
+- 医療・教育・政策・社会システム全体で活用可能
+- 世界中のAI/OS・APIと「橋渡し」できる“和”のインフラ
+
+| Feature / 特徴     | 空OS（Kū OS） | 既存OS・AI |
+|-------------------|:-------------:|:----------:|
+| 哲学/宗教横断     | ○             | △          |
+| 医療・倫理AI連携   | ○             | △/×        |
+| 多言語・多文化対応 | ◎             | △          |
+| Explainability    | ◎             | △          |
+| API拡張性         | ◎             | △          |
+| 公共性/グローバル  | ◎             | △          |
+
+> Kū OS can serve as a universal operating system for the age of integrated, ethical, and explainable AI.
+
+⸻
 
 参考資料 / References
 	•	OpenAPI仕様書（openapi.yaml）
