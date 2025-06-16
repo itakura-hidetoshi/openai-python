@@ -739,7 +739,11 @@ Python 3.8 or higher.
 
 See [the contributing documentation](./CONTRIBUTING.md).
 
-## 空OS（Kū OS）構想について
+## 空OS関連ドキュメント
 
-空OSは「空」の哲学とAIテンソル技術を融合した、分断なき知のための新しいOS型フレームワークです。
-（※詳細は `README_kuos.md` も参照）
+空OS（Kū OS）の設計・API・復元ポイントは  
+`/docs/kuos/` ディレクトリにまとめてあります。
+
+- [docs/kuos/README.md](docs/kuos/README.md) … 空OS全体説明
+- [docs/kuos/kuos_tensor.md](docs/kuos/kuos_tensor.md) … テンソル設計・復元ポイント
+- [docs/kuos/openapi.yaml](docs/kuos/openapi.yaml) … APIインターフェース仕様
