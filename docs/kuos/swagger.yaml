@@ -1,35 +1,195 @@
 openapi: 3.1.0
 info:
   title: Kū OS API
-  version: "0.1.0"
+  description: |
+    空OS（Kū OS）は、哲学・宗教・科学・倫理を横断し、動的テンソルで知をつなぐAPI群です。
+    - modeによる空・陰陽五行・周易・唯識など多層テンソルマッピング
+    - Explainable AI、情動・倫理・診断連携
+    - 出力フォーマット（text, json, diagram）、多言語対応（lang: ja, en, zh...）
+  version: "0.2.0"
+servers:
+  - url: http://localhost:8000
+    description: Local dev server
+
 paths:
   /tensor/map:
     post:
-      summary: Map text to tensor structure
+      summary: 任意テキストを指定テンソル構造にマッピング
+      description: |
+        入力テキストを、modeで指定したテンソル（空、陰陽五行、周易、唯識等）に自動構造化・要約・可視化します。
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                text:
-                  type: string
-                mode:
-                  type: string
-                output_format:
-                  type: string
-                  default: text
-                lang:
-                  type: string
-                  default: ja
+              $ref: '#/components/schemas/MapTensorRequest'
       responses:
         '200':
-          description: Successful Response
+          description: マッピング結果
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  mapped_tensor:
-                    type: string
+                $ref: '#/components/schemas/MapTensorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /tensor/compare:
+    post:
+      summary: 2つ以上のテンソル構造を比較
+      description: |
+        modeで指定したテンソル同士の類似度や差分、共通性、哲学的・医学的意味論の比較分析。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompareTensorRequest'
+      responses:
+        '200':
+          description: 比較結果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompareTensorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /tensor/diagnose:
+    post:
+      summary: テンソルを用いた診断・分析
+      description: |
+        入力テキストやデータを哲学的・医療的・倫理的観点からテンソル解析し、判断・助言を出力します。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiagnoseTensorRequest'
+      responses:
+        '200':
+          description: 診断・分析結果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiagnoseTensorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+components:
+  schemas:
+    MapTensorRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: 構造化したい任意テキスト
+        mode:
+          type: string
+          enum: [空テンソル, 陰陽五行テンソル, 周易テンソル, 唯識テンソル, カスタム]
+          description: マッピングするテンソルの種別
+        output_format:
+          type: string
+          enum: [text, json, diagram]
+          default: text
+          description: 出力フォーマット（テキスト, JSON, 図式等）
+        lang:
+          type: string
+          default: ja
+          description: 出力言語（例：ja, en, zh等）
+      required: [text, mode]
+
+    MapTensorResponse:
+      type: object
+      properties:
+        mapped_tensor:
+          type: string
+          description: テンソル構造化の結果（指定フォーマット）
+
+    CompareTensorRequest:
+      type: object
+      properties:
+        tensors:
+          type: array
+          items:
+            type: string
+          minItems: 2
+          description: 比較したい複数のテンソル
+        mode:
+          type: string
+          description: テンソル種別（空, 陰陽五行, 周易など）
+        output_format:
+          type: string
+          enum: [text, json, diagram]
+          default: text
+        lang:
+          type: string
+          default: ja
+      required: [tensors, mode]
+
+    CompareTensorResponse:
+      type: object
+      properties:
+        comparison_result:
+          type: string
+          description: テンソル比較・差分分析結果
+
+    DiagnoseTensorRequest:
+      type: object
+      properties:
+        input_data:
+          type: string
+          description: 診断したい自然文や症例・事例テキスト
+        mode:
+          type: string
+          enum: [哲学, 医療, 倫理, カスタム]
+          default: 哲学
+        output_format:
+          type: string
+          enum: [text, json]
+          default: text
+        lang:
+          type: string
+          default: ja
+      required: [input_data, mode]
+
+    DiagnoseTensorResponse:
+      type: object
+      properties:
+        diagnosis:
+          type: string
+          description: 診断・解析コメント
+
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+
+    ValidationError:
+      type: object
+      required: [loc, msg, type]
+      properties:
+        loc:
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          type: string
+        type:
+          type: string
