@@ -78,6 +78,7 @@ English
 ⸻
 ## 空OS（Kū OS）の革新性と独自性 / The Innovation of Kū OS
 
+日本語
 - 多層テンソルで宗教・哲学・科学・医療・倫理を一元解析
 - 国際標準API（OpenAPI 3.1）/ Explainable AI完全対応
 - 分断・対立・文化バイアスを越え、人類智を動的統合
@@ -92,8 +93,32 @@ English
 | Explainability    | ◎             | △          |
 | API拡張性         | ◎             | △          |
 | 公共性/グローバル  | ◎             | △          |
+- ◎ … 卓越している / 圧倒的に優れている  
+- ○ … 標準搭載・十分に対応  
+- △ … 部分的に対応・限定的  
+- × … 非対応・未実装
 
-> Kū OS can serve as a universal operating system for the age of integrated, ethical, and explainable AI.
+English
+The Innovation and Uniqueness of Kū OS
+	•	Unified analysis across religion, philosophy, science, medicine, and ethics using multilayer tensor architecture
+	•	International standard API (OpenAPI 3.1) / Full Explainable AI compatibility
+	•	Dynamic integration of human knowledge—transcending division, conflict, and cultural bias
+	•	Usable in medicine, education, policy, and social systems on a global scale
+	•	Functions as a “Wa” (harmony) infrastructure, bridging AI/OS/API ecosystems worldwide
+ ## Kū OS と既存OS・AIの比較表（Feature Comparison）
+
+| Feature                           | Kū OS | Existing OS / AI     |
+|:-----------------------------------|:------:|:---------------------:|
+| Cross-philosophy/religion          | ○      | △                   |
+| Medical/Ethical AI Integration     | ○      | △ / ×               |
+| Multilingual/Multicultural Support | ◎      | △                   |
+| Explainability                     | ◎      | △                   |
+| API Extensibility                  | ◎      | △                   |
+| Public/Global Utility              | ◎      | △                   |
+
+
+ > Kū OS can serve as a universal operating system for the age of integrated, ethical, and explainable AI.
+
 
 ⸻
 
