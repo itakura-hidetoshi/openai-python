@@ -739,11 +739,25 @@ Python 3.8 or higher.
 
 See [the contributing documentation](./CONTRIBUTING.md).
 
-## 空OS関連ドキュメント
 
-空OS（Kū OS）の設計・API・復元ポイントは  
-`/docs/kuos/` ディレクトリにまとめてあります。
+---
 
-- [docs/kuos/README.md](docs/kuos/README.md) … 空OS全体説明
-- [docs/kuos/kuos_tensor.md](docs/kuos/kuos_tensor.md) … テンソル設計・復元ポイント
-- [docs/kuos/openapi.yaml](docs/kuos/openapi.yaml) … APIインターフェース仕様
+## 空OS関連ドキュメント（Kū OS Documentation）
+
+空OS（Kū OS）の設計・API仕様・テンソル設計・復元ポイント等は  
+**`openai-python/docs/kuos/`** ディレクトリにまとめてあります。
+
+- [docs/kuos/README.md](docs/kuos/README.md) … 空OS全体説明 / Project overview
+- [docs/kuos/kuos_tensor.md](docs/kuos/kuos_tensor.md) … テンソル設計・復元ポイント / Tensor architecture and restoration points
+- [docs/kuos/openapi.yaml](docs/kuos/openapi.yaml) … APIインターフェース仕様 / API interface specification
+
+---
+
+### English
+
+All documents related to **Kū OS**—including its design concept, API specification, tensor architecture, and restoration points—are located in the  
+**`openai-python/docs/kuos/`** directory.
+
+- [docs/kuos/README.md](docs/kuos/README.md): Kū OS project overview (in Japanese and English)
+- [docs/kuos/kuos_tensor.md](docs/kuos/kuos_tensor.md): Detailed tensor architecture and restoration points
+- [docs/kuos/openapi.yaml](docs/kuos/openapi.yaml): API interface (OpenAPI/Swagger specification)
